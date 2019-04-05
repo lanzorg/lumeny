@@ -12,7 +12,7 @@ class Contract extends Model
      * @var array
      */
     protected $fillable = [
-        'energy', 'product', 'mobile', 'duration', 'promo',
+        'energy', 'product', 'mobile', 'duration', 'promo', 'customer_id',
     ];
 
     public function customer()
