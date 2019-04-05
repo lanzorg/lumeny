@@ -17,7 +17,7 @@ use App\Contract;
 
 $factory->define(Customer::class, function (Generator $faker) {
     return [
-        'fistname' => $faker->firstName,
+        'firstname' => $faker->firstName,
         'lastname' => $faker->lastName,
         'street' => $faker->streetName,
         'number' => $faker->buildingNumber,
@@ -29,9 +29,10 @@ $factory->define(Customer::class, function (Generator $faker) {
 $factory->define(Contract::class, function (Generator $faker) {
     return [
         'energy' => $faker->word,
-        'product' => $faker->wornumerify('MEGA ###'),
+        'product' => $faker->jobTitle,
         'mobile' => $faker->phoneNumber,
         'duration' => $faker->randomNumber,
         'promo' => $faker->userName,
+        'customer_id' => $faker->randomDigit,
     ];
 });
