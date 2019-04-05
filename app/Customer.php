@@ -15,7 +15,7 @@ class Customer extends Model
         'firstname', 'lastname', 'street', 'number', 'zip',
     ];
 
-    public function constracts()
+    public function contracts()
     {
         return $this->hasMany('App\Contract');
     }
