@@ -1,5 +1,9 @@
 <?php
 
+use Faker\Generator;
+use App\Customer;
+use App\Contract;
+
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -11,9 +15,23 @@
 |
 */
 
-$factory->define(App\User::class, function (Faker\Generator $faker) {
+$factory->define(Customer::class, function (Generator $faker) {
     return [
-        'name' => $faker->name,
-        'email' => $faker->email,
+        'fistname' => $faker->firstName,
+        'lastname' => $faker->lastName,
+        'street' => $faker->streetName,
+        'number' => $faker->buildingNumber,
+        'zip' => $faker->postcode,
+        'city' => $faker->city,
+    ];
+});
+
+$factory->define(Contract::class, function (Generator $faker) {
+    return [
+        'energy' => $faker->word,
+        'product' => $faker->wornumerify('MEGA ###'),
+        'mobile' => $faker->phoneNumber,
+        'duration' => $faker->randomNumber,
+        'promo' => $faker->userName,
     ];
 });
