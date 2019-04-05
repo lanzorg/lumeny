@@ -19,6 +19,8 @@ class CustomerController extends Controller
 
     /**
      * Retrieves the collection of Customer resources.
+     * 
+     * @return Response
      */
     public function getAll()
     {
@@ -27,6 +29,9 @@ class CustomerController extends Controller
 
     /**
      *  Retrieves a Customer resource.
+     * 
+     * @param  string  $userId
+     * @return Response
      */
     public function getOne($userId)
     {
@@ -35,6 +40,9 @@ class CustomerController extends Controller
 
     /**
      * Retrieves the collection of Contract resources belongs to a Customer one.
+     * 
+     * @param  string  $userId
+     * @return Response
      */
     public function getContracts($userId)
     {
