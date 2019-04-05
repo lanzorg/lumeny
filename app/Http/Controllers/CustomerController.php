@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Customer;
+use App\Contract;
 
 class CustomerController extends Controller
 {
@@ -27,8 +28,16 @@ class CustomerController extends Controller
     /**
      *  Retrieves a Customer resource.
      */
-    public function getOne($id)
+    public function getOne($userId)
     {
-        return Customer::with('contracts')->findOrFail($id);
+        return Customer::with('contracts')->findOrFail($userId);
+    }
+
+    /**
+     * Retrieves the collection of Contract resources belongs to a Customer one.
+     */
+    public function getContracts($userId)
+    {
+        return Contract::where('customer_id', $userId)->get();
     }
 }
