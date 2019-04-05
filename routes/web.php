@@ -11,11 +11,9 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
-
 $router->group(['prefix' => 'api'], function () use ($router) {
     $router->get('customers', 'CustomerController@getAll');
-    $router->get('customers/{id}', 'CustomerController@getOne');
+    $router->get('customers/{userId}', 'CustomerController@getOne');
+    $router->get('customers/{userId}/contracts', 'CustomerController@getContracts');
+    $router->patch('contracts/{contractId}', 'ContractController@update');
 });
