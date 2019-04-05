@@ -17,6 +17,6 @@ class Contract extends Model
 
     public function customer()
     {
-        return $this->hasOne('App\Customer');
+        return $this->belongsTo('App\Customer');
     }
 }
