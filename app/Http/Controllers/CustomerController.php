@@ -30,22 +30,22 @@ class CustomerController extends Controller
     /**
      *  Retrieves a Customer resource.
      * 
-     * @param  string  $userId
+     * @param  string  $customerId
      * @return Response
      */
-    public function getOne($userId)
+    public function getOne($customerId)
     {
-        return Customer::with('contracts')->findOrFail($userId);
+        return Customer::with('contracts')->findOrFail($customerId);
     }
 
     /**
      * Retrieves the collection of Contract resources belongs to a Customer one.
      * 
-     * @param  string  $userId
+     * @param  string  $customerId
      * @return Response
      */
-    public function getContracts($userId)
+    public function getContracts($customerId)
     {
-        return Contract::where('customer_id', $userId)->get();
+        return Contract::where('customer_id', $customerId)->get();
     }
 }

@@ -13,7 +13,7 @@
 
 $router->group(['prefix' => 'api'], function () use ($router) {
     $router->get('customers', 'CustomerController@getAll');
-    $router->get('customers/{userId}', 'CustomerController@getOne');
-    $router->get('customers/{userId}/contracts', 'CustomerController@getContracts');
+    $router->get('customers/{customerId}', 'CustomerController@getOne');
+    $router->get('customers/{customerId}/contracts', 'CustomerController@getContracts');
     $router->patch('contracts/{contractId}', 'ContractController@update');
 });
